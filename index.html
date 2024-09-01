@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hola tqm</title>
+    <link rel="icon" href="https://www.heartsofpurple.org/wp-content/uploads/2019/11/hearts-of-purple-icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG_Btp-eIaKKYhjuToqprM7N3L_YH_qNIlmuk3H86xto34E2sWaBXyHiBfsjQ14qGhwyIMe6OyfzZRRIxG5Cfam0bmBkp5J3YN7f8N9f20D5Dp4xP_oBlB0f2nBJ4zlVZu28fyLL4elp63f2Z-iBMN-gS_OVl5jBpbhkbgU1XXeEqmOBJdYHKCCLPZ/d/kim%20taehyung%20wallpaper%20hd%20iphone_45.jpg) no-repeat center center fixed; 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            max-width: 600px;
+            text-align: center;
+            color: white;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #12b335;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .photo {
+            width: 200px; 
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        #photos {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px; 
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px; 
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: -45%; /* Ajusta esta distancia según sea necesario */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+        #closing,
+        #signature {
+            text-align: right;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 id="title" class="fade-in">Hola pícale aquí jaja</h1>
+            <p id="message">
+                <!-- mensaje -->
+            </p>
+            <div id="photos" class="fade-in" style="display: none;">
+                <div class="tooltip">
+                    <img src="https://i.postimg.cc/85MDL3fw/20230408-162306.jpg" alt="Foto 1" class="photo">
+                    <span class="tooltiptext">
+                        Imagine your face<br>
+                        say hello to me<br>
+                        then all the bad days<br>
+                        they’re nothing to me<br>
+                        with you ♥
+                    </span>
+                </div>
+            </div>
+            <br>                                              
+            <p id="closing" class="fade-in" style="display: none;">Feliz cumpleaños, te quiero demasiado</p>
+            <p id="signature" class="fade-in" style="display: none;">Con cariño: Yovis, tu mejor amiga 😘</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paragraphs = [
+                "Holaaa jajaja. Quise hacer esto para que veas como implemento lo poco que he aprendido en mi carrera para hacer algo para ti. Sé que puedes decir esto que, pero creéme que son varias líneas de código aunque la verdad es algo muy simple pero espero te guste.",
+                "Puede que sientas que hoy no es un día especial como otras veces, pero para mi sí lo es, ya que cumples otro año más de vida. No quiero que esto se trate solo de decirte feliz cumpleaños 800 veces así que te diré todo lo que no te he dicho en mucho tiempo.",
+                "Tú eres una de las personas más dedicadas que conozco, siempre das lo mejor de ti en todo lo que haces. Aunque sé que a veces tú solita te haces sentir mal, quiero recordarte lo valiosa que eres y lo mucho que significas para mi y para toda la gente que te quiere, porque estoy segura de que no puedo ser la única.",
+                "Sé que a veces las cosas no salen como esperas y eso cambia tu estado de ánimo completamente pero quiero que sepas que, pase lo que pase, siempre estaré aquí para ti. No sientas que estás sola porque sabes que me encanta escucharte hablar de lo que sea aunque según tu lo repites, pero creéme que no me molesta para nada.",
+                "A pesar de que estemos lejitos y que cada vez nos veamos menos, mi cariño por ti no cambia porque nuestra amistad es única, y ninguna otra persona podría ocupar el lugar que tú tienes en mi vida. Eres irreemplazable, y eso es algo que nunca va a cambiar, sin importar dónde estemos.",
+                "Quiero agradecerte de todo corazón que sigas aquí. Realmente aprecio tu compañía y todo lo que haces por mi. Un solo mensaje basta para que alegres mi día. Así que no olvides que te quiero muchísimo y que no importa la distancia, siempre serás mi mejor amiga, la cuál podrá lograr todo lo que se proponga y siempre le desearé lo mejor.",
+                "Espero poder verte pronto para darte tu regalo, saludos a tus papás y a tu hermanita. (Si le picas a la imagen sale una frase)"
+            ];
+
+            const messageElement = document.getElementById('message');
+            const titleElement = document.getElementById('title');
+            const photosElement = document.getElementById('photos');
+            const closingElement = document.getElementById('closing');
+            const signatureElement = document.getElementById('signature');
+            
+            let paragraphIndex = 0;
+            let charIndex = 0;
+
+            titleElement.classList.add('show');
+
+            titleElement.addEventListener('click', () => {
+                titleElement.classList.remove('show');
+                typeWriter();
+            });
+
+            function typeWriter() {
+                if (paragraphIndex < paragraphs.length) {
+                    if (charIndex < paragraphs[paragraphIndex].length) {
+                        messageElement.innerHTML += paragraphs[paragraphIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, 35); 
+                    } else {
+                        messageElement.innerHTML += "<br><br>";
+                        charIndex = 0;
+                        paragraphIndex++;
+                        setTimeout(typeWriter, 500); 
+                    }
+                } else {
+                    photosElement.style.display = 'flex';
+                    photosElement.classList.add('show');
+                    closingElement.style.display = 'block';
+                    closingElement.classList.add('show');
+                    signatureElement.style.display = 'block';
+                    signatureElement.classList.add('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
